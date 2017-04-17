@@ -1,0 +1,19 @@
+html
+    head
+        //- bower:css+
+
+        //- endbower
+        //- bower:js
+
+        //- endbower
+        //- inject:css
+
+        //- endinject
+
+        title MyApp
+    body(class='myClass')
+        h1 My App
+        h3 sub heading
+        ul
+            each val in list
+                li= val
