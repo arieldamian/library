@@ -6,13 +6,14 @@ var port = process.env.PORT || 5000;
 
 // Setup static routes to files.
 app.use(express.static('public'));
-app.use(express.static('src/views'));
-// app.set('views', './src/views');
-// app.set('view engine', 'jade');
+app.set('views', './src/views');
+app.set('view engine', '.hbs');
+
+var handlebars = require('express-handlebars');
+app.engine('.hbs', handlebars({extname: 'hbs'}));
 
 app.get('/', function (request, response) {
-    response.send('Hello world!');
-    // response.render('index', {list: ['a', 'b']});
+    response.render('index', {title: 'Hello from render', list: ['a', 'b']});
 });
 
 app.get('/books', function (request, response) {
