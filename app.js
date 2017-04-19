@@ -3,7 +3,15 @@ var express = require('express');
 var app = express();
 
 var port = process.env.PORT || 5000;
-var bookRouter = require('./src/routes/bookRoutes');
+
+var nav = [{
+    Link: '/books',
+    Text: "Books"
+    }, {
+    Link: '/author',
+    Text: 'Author'
+    }];
+var bookRouter = require('./src/routes/bookRoutes')(nav);
 
 // Setup static routes to files.
 app.use(express.static('public'));
