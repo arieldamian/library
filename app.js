@@ -12,6 +12,7 @@ var nav = [{
     Text: 'Author'
     }];
 var bookRouter = require('./src/routes/bookRoutes')(nav);
+var adminRouter = require('./src/routes/adminRoutes')(nav);
 
 // Setup static routes to files.
 app.use(express.static('public'));
@@ -20,6 +21,7 @@ app.set('views', './src/views');
 app.set('view engine', 'ejs');
 
 app.use('/books', bookRouter);
+app.use('/admin', adminRouter);
 
 var handlebars = require('express-handlebars');
 app.engine('.hbs', handlebars({extname: 'hbs'}));
