@@ -13,7 +13,8 @@
     "ejs": "^2.5.6",
     "express": "^4.15.2",
     "express-handlebars": "^3.0.0",
-    "jade": "^1.11.0"
+    "jade": "^1.11.0",
+    "mongodb": "^2.2.26"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
