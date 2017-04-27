@@ -9,11 +9,12 @@ var app = express();
 var port = process.env.PORT || 5000;
 
 var nav = [{
-    Link: '/books',
-    Text: "Books"
-    }, {
-    Link: '/author',
-    Text: 'Author'
+        Link: '/books',
+        Text: 'Books'
+    },
+    {
+        Link: '/author',
+        Text: 'Author'
     }];
 
 var bookRouter = require('./src/routes/bookRoutes')(nav);
