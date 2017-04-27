@@ -17,8 +17,8 @@ var router = function (nav) {
                         title: 'Hello from render',
                         nav: nav,
                         books: results
-                    })
-                })
+                    });
+                });
             });
         });
 
@@ -35,7 +35,7 @@ var router = function (nav) {
                         title: 'Hello from render',
                         nav: nav,
                         book: results
-                    })
+                    });
                 });
             });
         });
