@@ -5,7 +5,7 @@ var bookController = function (bookService, nav) {
 
     var middleware = function (req, res, next) {
         if (!req.user){
-            res.redirect('/');
+            // res.redirect('/');
         }
         next();
     };
@@ -34,10 +34,13 @@ var bookController = function (bookService, nav) {
             var collection = db.collection('books');
 
             collection.findOne({_id: id}, function (err, results) {
-                response.render('bookView', {
-                    title: 'Hello from render',
-                    nav: nav,
-                    book: results
+                bookService.getBookById(results.bookId, function (err, book) {
+                    results.book = book;
+                    response.render('bookView', {
+                        title: 'Hello from render',
+                        nav: nav,
+                        book: results
+                    });
                 });
             });
         });
