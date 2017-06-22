@@ -14,7 +14,11 @@ module.exports = function () {
           collection.findOne({
               username: username
           }, function (err, results) {
+<<<<<<< HEAD
               if(results.password === password) {
+=======
+              if(results && results.password === password) {
+>>>>>>> master
                   var user = results;
                   done(null, user);
               } else {
